@@ -37,7 +37,7 @@ resample_up = 2
 resample_down = 3
 
 gx = cp.linspace(start, stop, num_samps, endpoint=False) 
-gy = cp.cos(-cx**2/6.0)
+gy = cp.cos(-gx**2/6.0)
 
 gf = cusignal.resample_poly(gy, resample_up, resample_down, window=('kaiser', 0.5))
 ```
@@ -92,7 +92,7 @@ This code executes on an NVIDIA P100 in 728 ms.
 * CUDA Divers
 * Anaconda/Miniconda (3.7 version)
 * CuPy >= 6.2.0
-* Optional: RTL-SDR or other SDR Driver/Packaging. Find more information and follow the instructions for setup [here](https://github.com/osmocom/rtl-sdr). NOTE: [pyrtlsdr](https://github.com/roger-/pyrtlsdr) is automatically installed with the default cusignal environment. To make use of some of the examples in the Notebooks, you'll need to buy/install an rtl-sdr.
+* Optional: RTL-SDR or other SDR Driver/Packaging. Find more information and follow the instructions for setup [here](https://github.com/osmocom/rtl-sdr). NOTE: [pyrtlsdr](https://github.com/roger-/pyrtlsdr) is not automatically installed with the default cusignal environment. To make use of some of the examples in the Notebooks, you'll need to buy/install an rtl-sdr and necessary software packages.
 
 ## Install cuSignal
 
@@ -119,5 +119,5 @@ This code executes on an NVIDIA P100 in 728 ms.
 
 Review the [CONTRIBUTING.md](https://github.com/rapidsai/cusignal/blob/master/CONTRIBUTING.md) file for information on how to contribute code and issues to the project.
 
-## GTC DC Slides
-You can learn more about the cuSignal stack and motivations by viewing these GTC DC 2019 slides, located [here](https://drive.google.com/open?id=1rDNJVIHvCpFfNEDB9Gau5MzCN8G77lkH).
+## GTC DC Slides and Presentation
+You can learn more about the cuSignal stack and motivations by viewing these GTC DC 2019 slides, located [here](https://drive.google.com/open?id=1rDNJVIHvCpFfNEDB9Gau5MzCN8G77lkH). The recording of this talk can be found at [GTC On Demand](https://on-demand.gputechconf.com/gtcdc/2019/video/dc91165-cusignal-gpu-acceleration-of-scipy-signal/)
